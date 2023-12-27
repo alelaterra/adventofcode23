@@ -24,8 +24,16 @@ for(const race of races){
   result1 *= results.length
   
 }
-
-
+const races2 = {time: times.join(''), record: records.join('')}
+console.log(races2)
+//SLOW BUT WORK, Can speed up with binary search and after linear search :D 
+let counter = 0
+for(let i = 0; i <= races2.time; i++){
+  const distance = i * (races2.time - i)
+  if(distance > races2.record)
+    counter++;
+}
+console.log(counter)
 
 document.getElementById('sol1').innerHTML += ': ' + result1;
 
